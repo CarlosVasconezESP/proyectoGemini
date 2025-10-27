@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple Gemini-style favicon (SVG). Puedes reemplazar por tu imagen original. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Gemini icon">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7DD3FC"/>
+      <stop offset="100%" stop-color="#60A5FA"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="20" fill="#071025"/>
+  <circle cx="64" cy="48" r="30" fill="url(#g)"/>
+  <path d="M40 88c6-12 42-12 48 0" stroke="#e6eef8" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <!-- stylized G: a cut in the circle -->
+  <path d="M64 28v14h12" stroke="#052135" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
