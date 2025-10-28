@@ -672,3 +672,44 @@ html, body {
     font-size: 1.5rem;
   }
 }
+
+/* ===== PESTAÑAS / PILLS ===== */
+.pill-tabs { display:flex; gap:10px; margin: 8px 0 24px; flex-wrap:wrap; }
+.pill {
+  padding:10px 16px; border:1px solid rgba(255,255,255,.12);
+  background: rgba(21,24,30,.6); border-radius: 999px; cursor:pointer;
+  color: var(--muted); font-weight:600; transition:.2s;
+}
+.pill:hover{ background: rgba(255,255,255,.06); color: var(--text); }
+.pill.active{ background: rgba(59,130,246,.15); color: var(--primary); border-color: rgba(59,130,246,.35); }
+
+/* Badges y filas de acciones */
+.badges { display:flex; gap:8px; margin: 10px 0 6px; flex-wrap:wrap; }
+.badge {
+  font-size:.75rem; padding:4px 10px; border-radius:999px;
+  background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12)
+}
+.actions-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+.card-button.ghost { background: transparent; color: var(--text); border-color: rgba(255,255,255,.18); }
+.card-button.ghost:hover { background: rgba(255,255,255,.08); }
+
+/* Listas cortas dentro de tarjetas */
+.mini-list { margin: 8px 0 0 16px; color: var(--muted); line-height:1.6; }
+
+/* ===== MODAL ===== */
+.modal[aria-hidden="true"] { display:none; }
+.modal[aria-hidden="false"] {
+  position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center;
+}
+.modal-backdrop {
+  position:absolute; inset:0; background: rgba(0,0,0,.6);
+  backdrop-filter: blur(4px);
+}
+.modal-body {
+  position: relative; width:min(900px, 92vw); background: rgba(21,24,30,.9);
+  border:1px solid rgba(255,255,255,.12); border-radius: 16px; box-shadow: var(--shadow);
+}
+.modal-close {
+  position:absolute; top:8px; right:10px; border:0; background:transparent; color:#fff; font-size:20px; cursor:pointer;
+}
+.modal-content { padding: 16px; }

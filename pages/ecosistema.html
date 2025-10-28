@@ -12,42 +12,133 @@
   <div id="header"></div>
 
   <main class="main-content">
-    <h2 class="section-title">El Ecosistema Gemini (Versiones)</h2>
-    <p class="section-description">
-      Conoce las diferentes versiones de Gemini y sus aplicaciones específicas
-    </p>
+    <h2 class="section-title">El Ecosistema Gemini</h2>
+    <p class="section-description">Versiones, herramientas y planes — con demos rápidas.</p>
 
-   <div class="cards-grid">
-        <!-- Tarjeta 1: Google Veo 3.1 -->
-        <div class="card">
-            <div class="card-icon">🎥</div>
-            <h3 class="card-title">Google Veo 3.1</h3>
-            <p class="card-subtitle">Generación de Video IA</p>
-            <p class="card-description">
-            Genera videos realistas a partir de texto con la última tecnología de Google.
-            </p>
-            <button class="card-button" onclick="window.open('https://gemini.google.com/app?hl=es', '_blank')">
-            Probar Veo →
-            </button>
-        </div>
+    <!-- Filtros / pestañas -->
+    <div class="pill-tabs" role="tablist" aria-label="Filtros de ecosistema">
+      <button class="pill active" data-filter="modelos" role="tab" aria-selected="true">Modelos</button>
+      <button class="pill" data-filter="herramientas" role="tab" aria-selected="false">Herramientas</button>
+      <button class="pill" data-filter="planes" role="tab" aria-selected="false">Planes</button>
+    </div>
 
-        <!-- Tarjeta 2: Nanobanana -->
-        <div class="card">
-            <div class="card-icon">🎨</div>
-            <h3 class="card-title">Nanobanana</h3>
-            <p class="card-subtitle">Generador de Imágenes</p>
-            <p class="card-description">
-            Crea imágenes impresionantes con IA de última generación.
-            </p>
-            <button class="card-button" onclick="window.open('https://gemini.google.com/app?hl=es', '_blank')">
-            Generar Imagen →
-            </button>
+    <!-- GRID DINÁMICO -->
+    <div id="eco-grid" class="cards-grid">
+      <!-- ====== MODELOS ====== -->
+      <article class="card eco-item" data-tag="modelos">
+        <div class="card-icon">⚡</div>
+        <h3 class="card-title">Gemini 2.5 Flash / Pro / Nano</h3>
+        <p class="card-subtitle">Familia de Modelos</p>
+        <p class="card-description">Modelos multimodales para chat, RAG, razonamiento y en móviles (Nano).</p>
+        <div class="badges">
+          <span class="badge">Texto</span><span class="badge">Imagen</span><span class="badge">Audio</span>
         </div>
+        <div class="actions-row">
+          <button class="card-button" onclick="window.open('https://deepmind.google/models/gemini/', '_blank')">Probar Modelos →</button>
+          <button class="card-button ghost" data-demo data-mp4="../assets/video/gemini_2.5.mp4">Ver demo</button>
         </div>
+      </article>
+
+      <article class="card eco-item" data-tag="modelos">
+        <div class="card-icon">🎥</div>
+        <h3 class="card-title">Google Veo 3.1</h3>
+        <p class="card-subtitle">Generación de Video IA</p>
+        <p class="card-description">Genera videos realistas a partir de texto con el stack de Google.</p>
+        <div class="badges"><span class="badge">Video</span><span class="badge">Texto → Video</span></div>
+        <div class="actions-row">
+          <button class="card-button" onclick="window.open('https://deepmind.google/models/veo/', '_blank')">Probar Veo →</button>
+          <button class="card-button ghost" data-demo data-mp4="../assets/video/veo_3.1.mp4">Ver demo</button>
+        </div>
+      </article>
+
+      <article class="card eco-item" data-tag="modelos">
+        <div class="card-icon">🖼️</div>
+        <h3 class="card-title">Imagen 3</h3>
+        <p class="card-subtitle">Generación de Imágenes</p>
+        <p class="card-description">Creación de imágenes fotorrealistas y diseño creativo controlado.</p>
+        <div class="badges"><span class="badge">Imagen</span><span class="badge">Prompting</span></div>
+        <div class="actions-row">
+          <button class="card-button" onclick="window.open('https://developers.googleblog.com/es/imagen-3-arrives-in-the-gemini-api/', '_blank')">Generar Imagen →</button>
+          <button class="card-button ghost" data-demo data-mp4="../assets/video/imagen3.mp4">Ver demo</button>
+        </div>
+      </article>
+
+      <!-- ====== HERRAMIENTAS ====== -->
+      <article class="card eco-item" data-tag="herramientas">
+        <div class="card-icon">🧪</div>
+        <h3 class="card-title">AI Studio</h3>
+        <p class="card-subtitle">Playground de prompts</p>
+        <p class="card-description">Itera prompts, guarda variantes y exporta a código.</p>
+        <button class="card-button" onclick="window.open('https://aistudio.google.com', '_blank')">Abrir AI Studio →</button>
+        <button class="card-button ghost" data-demo data-mp4="../assets/video/studio.mp4">Ver demo</button>
+      </article>
+
+      <article class="card eco-item" data-tag="herramientas">
+        <div class="card-icon">📓</div>
+        <h3 class="card-title">NotebookLM</h3>
+        <p class="card-subtitle">Notas con IA</p>
+        <p class="card-description">Sube fuentes y genera resúmenes, guías de estudio y FAQs.</p>
+        <button class="card-button" onclick="window.open('https://notebooklm.google', '_blank')">Probar NotebookLM →</button>
+        <button class="card-button ghost" data-demo data-mp4="../assets/video/notebook.mp4">Ver demo</button>
+      </article>
+
+      <article class="card eco-item" data-tag="herramientas">
+        <div class="card-icon">☁️</div>
+        <h3 class="card-title">Vertex AI</h3>
+        <p class="card-subtitle">Enterprise</p>
+        <p class="card-description">Despliegue, seguridad, monitoreo y tuning para producción.</p>
+        <button class="card-button" onclick="window.open('https://cloud.google.com/vertex-ai', '_blank')">Ver en Google Cloud →</button>
+        <button class="card-button ghost" data-demo data-mp4="../assets/video/vertex.mp4">Ver demo</button>
+      </article>
+
+      <!-- ====== PLANES ====== -->
+      <article class="card eco-item" data-tag="planes">
+        <div class="card-icon">✨</div>
+        <h3 class="card-title">Gratis</h3>
+        <p class="card-subtitle">Gemini básico</p>
+        <ul class="mini-list">
+          <li>Uso personal limitado</li>
+          <li>Acceso web</li>
+        </ul>
+        <button class="card-button" onclick="window.open('https://gemini.google.com/', '_blank')">Usar ahora →</button>
+      </article>
+
+      <article class="card eco-item" data-tag="planes">
+        <div class="card-icon">💎</div>
+        <h3 class="card-title">Google One AI Premium</h3>
+        <p class="card-subtitle">Avanzado</p>
+        <ul class="mini-list">
+          <li>Modelos más capaces</li>
+          <li>Integración con apps Google</li>
+        </ul>
+        <button class="card-button" onclick="window.open('https://one.google.com/about/', '_blank')">Ver plan →</button>
+      </article>
+
+      <article class="card eco-item" data-tag="planes">
+        <div class="card-icon">🏢</div>
+        <h3 class="card-title">Enterprise (Vertex AI)</h3>
+        <p class="card-subtitle">Empresas</p>
+        <ul class="mini-list">
+          <li>Privacidad & cumplimiento</li>
+          <li>Escalado en GCP</li>
+        </ul>
+        <button class="card-button" onclick="window.open('https://developers.google.com/program/plans-and-pricing?hl=es-419', '_blank')">Contactar ventas →</button>
+      </article>
+    </div>
   </main>
+
+  <!-- Modal de demo (YouTube / iframe) -->
+  <div id="demo-modal" class="modal" aria-hidden="true" role="dialog" aria-label="Demo">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-body">
+      <button class="modal-close" aria-label="Cerrar" data-close>✕</button>
+      <div class="modal-content" id="demo-slot"></div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="../js/particles-config.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/ecosistema.js"></script>
 </body>
 </html>
