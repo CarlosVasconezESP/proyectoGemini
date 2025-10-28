@@ -392,6 +392,186 @@ html, body {
 
 
 /* ========================================
+   SECCIONES DE FUNCIONALIDADES
+   ======================================== */
+
+/* Card con efecto flip (volteo) */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  min-height: 280px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Volteo activado por clase JS en lugar de hover */
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-front {
+  background: rgba(21, 24, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover solo para resaltar, sin voltear */
+.flip-card:hover .flip-card-front {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.flip-card:hover .flip-card-inner:not(.flipped) {
+  transform: translateY(-5px);
+}
+
+.flip-card-back {
+  background: rgba(21, 24, 30, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  transform: rotateY(180deg);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-back-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.card-back-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+  padding: 25px;
+  color: var(--text);
+}
+
+.card-back-text {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.flip-hint {
+  margin-top: auto;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: var(--primary);
+  text-align: center;
+  font-weight: 500;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+/* Sección de capacidades */
+.capability-section {
+  margin-bottom: 60px;
+}
+
+.capability-section.featured {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin: 60px 0;
+}
+
+.subsection-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.featured-card {
+  background: rgba(21, 24, 30, 0.9);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.featured-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+/* Sección de video */
+.video-section {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.video-container {
+  margin-top: 30px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-container iframe {
+  display: block;
+  width: 100%;
+  min-height: 500px;
+}
+
+/* Sección de beneficios */
+.benefits-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(34, 211, 238, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.benefit-card:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(34, 211, 238, 0.15));
+  border-color: var(--accent);
+}
+
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 
@@ -478,4 +658,17 @@ html, body {
   .card.large { grid-column: span 1; }
   .hero-title { font-size: 3rem; }
   .hero-subtitle { font-size: 1.2rem; }
+  
+  /* Funcionalidades responsive */
+  .video-container iframe {
+    min-height: 300px;
+  }
+  
+  .capability-section.featured {
+    padding: 30px 20px;
+  }
+  
+  .subsection-title {
+    font-size: 1.5rem;
+  }
 }
