@@ -40,4 +40,24 @@ function initMenuToggle() {
 // Cargar componentes al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
   loadHeader();
+  initFlipCards();
 });
+
+// Inicializar flip cards con click
+function initFlipCards() {
+  const flipCards = document.querySelectorAll('.flip-card');
+  
+  flipCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      // Evitar que el click en enlaces o botones internos active el flip
+      if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+        return;
+      }
+      
+      const inner = this.querySelector('.flip-card-inner');
+      if (inner) {
+        inner.classList.toggle('flipped');
+      }
+    });
+  });
+}
