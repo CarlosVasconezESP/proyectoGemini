@@ -1,0 +1,6 @@
+1.Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017, August 31). Transformer: A novel neural network architecture for language understanding. Google Research. https://research.google/blog/transformer-a-novel-neural-network-architecture-for-language-understanding/
+2.Google DeepMind. (2024). Gemini: A family of highly capable multimodal models. https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf
+3.Google DeepMind. (2024). Gemini models. https://deepmind.google/models/gemini/
+4.Caballar, R. D., & Stryker, C. (2025). What is Google Gemini? IBM Think. https://www.ibm.com/think/topics/google-gemini
+5.Google Research. (2020, January 28). Towards a conversational agent that can chat about…anything. https://research.google/blog/towards-a-conversational-agent-that-can-chat-aboutanything/
+6.Google DeepMind. (2024). Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context. https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf
