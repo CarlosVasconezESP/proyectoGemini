@@ -7,10 +7,35 @@ async function loadHeader() {
       const html = await response.text();
       headerDiv.innerHTML = html;
       initMenuToggle();
+      setActiveNavLink();
     } catch (error) {
       console.error('Error cargando header:', error);
     }
   }
+}
+
+// Marcar el enlace activo según la página actual
+function setActiveNavLink() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.site-nav a');
+  
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    
+    // Obtener el nombre del archivo de la URL actual
+    const currentPage = currentPath.split('/').pop();
+    
+    // Verificar si es la página de inicio
+    if (currentPage === '' || currentPage === 'index.html') {
+      if (linkPath.includes('index.html')) {
+        link.classList.add('active');
+      }
+    } 
+    // Verificar otras páginas
+    else if (linkPath.includes(currentPage)) {
+      link.classList.add('active');
+    }
+  });
 }
 
 // Toggle menú móvil
