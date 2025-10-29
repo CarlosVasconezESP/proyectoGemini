@@ -40,12 +40,15 @@ function initMenuToggle() {
 // Cargar componentes al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
   loadHeader();
-  initFlipCards();
+  initFlipCards(); // <- Mantiene tu funcionalidad adicional
 });
 
 // Inicializar flip cards con click
 function initFlipCards() {
   const flipCards = document.querySelectorAll('.flip-card');
+  
+  // Solo ejecutar si existen flip cards en la página
+  if (flipCards.length === 0) return;
   
   flipCards.forEach(card => {
     card.addEventListener('click', function(e) {
