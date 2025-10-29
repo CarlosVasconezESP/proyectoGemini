@@ -554,6 +554,27 @@ html, body {
   min-height: 500px;
 }
 
+.expert-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius);
+  outline: none;
+}
+
+/* Videos verticales (formato móvil) */
+.video-container.vertical-video {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.expert-video.vertical {
+  max-height: 600px;
+  width: auto;
+  margin: 0 auto;
+}
+
 /* Sección de beneficios */
 .benefits-section {
   margin-top: 60px;
