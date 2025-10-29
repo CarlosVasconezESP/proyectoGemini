@@ -50,6 +50,11 @@ html, body {
   z-index: 0;
   background: var(--particles-gradient);
   transition: background 0.8s ease;
+  pointer-events: none;
+}
+
+#particles-js canvas {
+  pointer-events: auto;
 }
 
 #particles-js.hidden canvas {
