@@ -109,6 +109,110 @@
   border-radius: var(--radius);
 }
 
+/* ========================================
+   TARJETA DE ANTECEDENTES
+   ======================================== */
+.antecedentes-card {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(21, 24, 30, 0.95), rgba(13, 15, 18, 0.95));
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.antecedentes-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+}
+
+.antecedentes-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 25px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mini-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.mini-card {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.mini-card:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+.mini-date {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(59, 130, 246, 0.15);
+  padding: 6px 12px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.mini-title {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive para antecedentes */
+@media (max-width: 1200px) {
+  .mini-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .antecedentes-card {
+    padding: 20px;
+  }
+  
+  .mini-cards-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .antecedentes-title {
+    font-size: 1.2rem;
+  }
+  
+  .mini-card {
+    padding: 15px 12px;
+  }
+  
+  .mini-title {
+    font-size: 0.9rem;
+  }
+}
+
 .timeline-card {
   position: relative;
   padding-left: 25px;
@@ -363,7 +467,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(0.4);
+  filter: brightness(2);
   transition: transform 0.6s ease;
 }
 
